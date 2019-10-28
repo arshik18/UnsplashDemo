@@ -1,0 +1,23 @@
+.login{
+
+    border:1px solid grey;
+    height: 24em;
+    width:30%;
+    margin-top:6%;
+    margin-right:34%;
+    margin-left: 34%;
+    border-radius: 4px;
+    box-shadow: 4px 4px #ddd;
+}
+.form-group{
+    
+    margin-top:5%;
+    margin-right:5%;
+    margin-left:5%;
+}
+.login-form{
+    margin-top:20%;
+}
+.errorMessage{
+  color:red;
+}

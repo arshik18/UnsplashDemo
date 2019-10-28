@@ -1,0 +1,21 @@
+
+.navbar{
+    background-color: black;
+    height:4em;
+}
+.label{
+    font-size:1.2em;
+    color:white;
+}
+.logout{
+    color: white !important;
+    margin-bottom: 0.5em !important;
+    font-size: 1.2em !important;
+}
+a:hover{
+    color:rgb(161, 165, 161) !important;
+    text-decoration:none !important;
+}
+button:hover{
+    color:rgb(161, 165, 161) !important;
+}
