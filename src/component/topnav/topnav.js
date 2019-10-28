@@ -23,9 +23,8 @@ class Topnav extends Component {
           }          
 
            localStorage.setItem("user",JSON.stringify(user));
-
            localStorage.removeItem("item");
-
+           localStorage.removeItem("authenticated");
            break;
         }
         

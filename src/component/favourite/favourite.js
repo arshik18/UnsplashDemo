@@ -8,6 +8,11 @@ class Favourite extends Component{
     state={
         localStorageData:""
     }
+    componentWillMount(){
+       if(!localStorage.getItem('authenticated')){
+            this.props.history.push('/loginfirst')
+        }
+    }
    deleteFavourite=(favphoto)=>
    {
           let lsd=JSON.parse(localStorage.getItem("item"));
@@ -24,9 +29,10 @@ class Favourite extends Component{
             favouritephoto = JSON.parse(this.state.localStorageData).map((favphoto,index)=>{
                 return(
                     <div key={index} className="image_div "> 
-                    <img className="image" src={favphoto} alt=" Not Found"/>
-                    <div className="favourite" >
-                        
+                        <img className="image" 
+                             src={favphoto} 
+                             alt=" Not Found"/>
+                        <div className="favourite" >
                                 <FontAwesomeIcon id={index}  
                                                  icon={faTrash} 
                                                  color="grey"
@@ -38,15 +44,19 @@ class Favourite extends Component{
                
             })
         }
-        
+        let noFavouriteFound="";
+        if(favouritephoto=="")
+        {
+            noFavouriteFound=<div className="no_fav_label">You don't have any favourite item.</div>
+        }
         return(
            <React.Fragment>
             <Topnav/>
             <div className="favourite_gallery">
-            <div className="favourite_container">
-                
-            {favouritephoto}
-            </div>
+                <div className="favourite_container"> 
+                    {noFavouriteFound}
+                    {favouritephoto}
+                </div>
             </div>
             </React.Fragment>
         )

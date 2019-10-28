@@ -4,6 +4,7 @@ import axios from 'axios';
 import { faStar } from '@fortawesome/free-solid-svg-icons'; 
 import { faStar as faStarO} from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import{YOUR_ACCESS_KEY, ApiUrl} from '../../constants/constants';
 
 class PhotoGallery extends Component{
 
@@ -35,12 +36,8 @@ class PhotoGallery extends Component{
         
        
     }
-   /*  componentWillMount(){
-        this.setState({favouritesList:JSON.parse(localStorage.getItem('item'))})
-    } */
     componentDidMount(){
-        var YOUR_ACCESS_KEY='db4121687e78dde12fd5be776998a37a512f9d9be917ec4decfe22b5066ad495';
-            axios.get(`https://api.unsplash.com/photos/?client_id=${YOUR_ACCESS_KEY}`,{
+            axios.get(ApiUrl + `?client_id=${YOUR_ACCESS_KEY}`,{
                 header:{
                     'Accept-Version': 'v1'
                 }
@@ -68,19 +65,6 @@ class PhotoGallery extends Component{
             )
 
         })
-       /*  if(this.state.favouritesList.length === 0){
-            let lsd = localStorage.getItem("item");
-            if(lsd != null) this.setState({
-                favouritesList : JSON.parse(lsd)
-            });
-        } */
-        
-         /* let favouritephoto = this.state.favouritesList.map(favphoto=>{
-            return(
-                <img src={favphoto}/>
-            )
-        })     */ 
-        
         return(
             <div className="photo_gallery">
               <div className="photo_container">
